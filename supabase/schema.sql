@@ -1,4 +1,6 @@
--- 새 실습 프로젝트에서 한 번 실행하세요. 기존 posts가 있으면 중단됩니다.
+-- 오늘의 한 줄 기록 — Supabase PostgreSQL 스키마
+-- 새 프로젝트의 SQL Editor에 이 파일 전체를 붙여 넣고 한 번 실행하세요.
+-- 기존 posts가 있으면 중단됩니다. 기존 테이블과 데이터를 삭제하지 않습니다.
 begin;
 
 create table public.posts (
@@ -10,6 +12,10 @@ create table public.posts (
     content ~ '[^[:space:]　 ﻿]'
   )
 );
+
+-- 화면의 최신 50개 조회: ORDER BY created_at DESC, id DESC LIMIT 50
+create index posts_created_at_id_idx
+  on public.posts (created_at desc, id desc);
 
 alter table public.posts enable row level security;
 

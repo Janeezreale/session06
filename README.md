@@ -58,11 +58,12 @@ Supabase 대시보드에서 New project를 선택하고 **새 실습 전용 프�
 
 ### 5. SQL 실행
 
-새 프로젝트의 SQL Editor에서 New query를 열고 `supabase/schema.sql` 전체를 붙여 넣어 실행하세요. Table Editor에 `public.posts`가 생겼는지 확인합니다.
+새 프로젝트의 SQL Editor에서 New query를 열고 [supabase/schema.sql](supabase/schema.sql) 전체를 붙여 넣어 실행하세요. Table Editor에 `public.posts`가 생겼는지 확인합니다.
 
 - `id`: 자동 생성 UUID 기본키 (시퀀스 권한 불필요)
 - `content`: 필수, 공백만 있는 값 금지, 최대 500자
 - `created_at`: 서버의 `now()` 기본값
+- `(created_at DESC, id DESC)` 복합 인덱스: 최신 50개 조회에 사용
 - RLS 활성화, 비로그인 역할 `anon`에 SELECT 및 `content` INSERT만 허용
 - UPDATE·DELETE 권한과 정책 없음. 작성자가 id·created_at을 지정하는 것도 차단
 
