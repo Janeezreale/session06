@@ -1,0 +1,51 @@
+:root { color-scheme: light; --ink: #24332b; --muted: #66736b; --green: #286044; --line: #e1e6df; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #f8f9f5; color: var(--ink); font-family: Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; line-height: 1.65; }
+button, textarea { font: inherit; }
+button { cursor: pointer; border: 0; border-radius: 10px; background: var(--green); color: white; padding: 11px 20px; font-size: 14px; font-weight: 700; }
+button:hover:not(:disabled) { background: #1a4932; }
+button:disabled { cursor: not-allowed; opacity: .48; }
+:focus-visible { outline: 3px solid #bc773c; outline-offset: 4px; }
+.page { max-width: 804px; padding: 0 28px; margin: auto; }
+.masthead { display: flex; align-items: center; justify-content: space-between; padding: 28px 0; border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+.brand-mark { display: grid; place-items: center; width: 32px; height: 32px; background: var(--green); color: white; border-radius: 10px; font-size: 22px; }
+.session { letter-spacing: .14em; font-size: 11px; color: var(--muted); }
+.intro { padding: 52px 0 32px; }
+.eyebrow { color: var(--green); font-size: 13px; font-weight: 700; }
+h1 { margin: 10px 0; font-size: clamp(28px, 5vw, 42px); letter-spacing: -.06em; line-height: 1.3; }
+.dot { color: #ba7943; }
+.intro > p:last-child { color: var(--muted); font-size: 15px; }
+h2 { font-size: 18px; margin: 0; letter-spacing: -.03em; }
+.composer { background: white; padding: 28px; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 5px 18px #23332604; }
+.section-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+.pill { font-size: 11px; padding: 4px 10px; color: var(--green); background: #edf4eb; border-radius: 20px; white-space: nowrap; }
+label { display: block; margin-bottom: 8px; font-size: 13px; color: var(--muted); }
+textarea { width: 100%; resize: vertical; min-height: 138px; padding: 16px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); background: #fcfdfb; font-size: 15px; }
+textarea::placeholder { color: #79837b; }
+textarea:disabled { background: #f4f5f2; }
+.form-bottom { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 12px; }
+.counter, .over-limit { font-size: 12px; color: var(--muted); }
+.privacy { font-size: 12px; color: var(--muted); margin: 18px 0 0; }
+.notice { color: var(--green); font-size: 14px; margin-bottom: 0; }
+.notice:empty { display: none; }
+.feed { margin-top: 38px; }
+.feed-caption { color: var(--muted); font-size: 12px; margin: 4px 0 0; }
+.secondary { color: var(--green); background: transparent; border: 1px solid #c9d6c9; padding: 8px 12px; font-size: 12px; white-space: nowrap; }
+.secondary:hover:not(:disabled) { background: #eaf0e7; }
+.empty { border: 1px dashed #ccd6ca; border-radius: 14px; text-align: center; padding: 36px 18px; color: var(--muted); font-size: 14px; }
+.empty p { color: var(--ink); margin: 8px 0; }
+.empty > span { font-size: 13px; }
+.empty .empty-symbol { font-size: 27px; color: var(--green); }
+.post-list { list-style: none; padding: 0; display: grid; gap: 12px; }
+.post { background: white; border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
+.post-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 12px; color: var(--muted); }
+.post-meta > span { color: var(--green); font-weight: 700; }
+.post > p { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 15px; margin: 14px 0 0; }
+.setup { background: #fff7e8; border: 1px solid #e9d5b2; border-radius: 12px; padding: 20px; margin-bottom: 24px; overflow-wrap: anywhere; }
+.setup h2 { font-size: 16px; }
+.setup p { font-size: 13px; margin: 8px 0 0; }
+.error { background: #fff1ed; color: #963d26; border-radius: 10px; padding: 14px; font-size: 13px; overflow-wrap: anywhere; }
+.over-limit { color: #963d26; }
+footer { margin-top: 48px; padding: 24px 0 32px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 11px; }
+@media (max-width: 520px) { .page { padding: 0 20px; } .masthead { padding: 20px 0; } .intro { padding-top: 36px; } .composer { padding: 20px; } h2 { font-size: 16px; } .post { padding: 20px; } footer { flex-direction: column; gap: 4px; } }
