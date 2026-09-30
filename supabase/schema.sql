@@ -9,6 +9,8 @@ create table public.posts (
   created_at timestamptz not null default now(),
   constraint posts_content_length check (char_length(content) between 1 and 500),
   constraint posts_content_not_blank check (
+  -- content가 공백만으로 이루어지지 않도록 합니다. 공백에는 일반 공백, 일본어 공백, nbsp, BOM이 포함됩니다.
+  -- 아래 특수문자 깨져 나올 수 있음. 오타 아님
     content ~ '[^[:space:]　 ﻿]'
   )
 );
