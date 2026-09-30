@@ -1,4 +1,4 @@
-# 오늘의 한 줄 기록
+# 실습: 오늘의 한 줄 기록
 
 **작성 → DB 저장 → 조회 → 새로고침 → 배포 → 코드 변경·재배포**를 경험하는 공개 게시판입니다. 완성 코드를 실행하고 각자 만든 Supabase 프로젝트에 연결합니다.
 
@@ -40,8 +40,8 @@ GitHub에서 강사가 제공한 예제 레포지토리를 열고 **Fork → Cre
 자신의 계정에 생성된 Fork에서 **Code** 버튼으로 URL을 복사하고, 아래 `<자신이 Fork한 GitHub 레포 URL>`을 해당 주소로 바꿔 실행하세요.
 
 ```bash
-git clone <자신이 Fork한 GitHub 레포 URL> session06-diary
-cd session06-diary
+git clone <자신이 Fork한 GitHub 레포 URL> session06
+cd session06
 ```
 
 이후 명령은 이 폴더에서 실행합니다. 강사는 이 폴더의 `package.json`이 저장소 루트에 있도록 예제 레포지토리를 제공하는 것을 권장합니다.
@@ -73,16 +73,8 @@ SQL은 새 테이블 생성용이며 한 번 실행합니다. 다시 실행하�
 
 ### 6. 자신의 환경변수 입력
 
-macOS/Linux:
-
-```bash
-cp .env.example .env.local
-```
-
-Windows PowerShell:
-
-```powershell
-Copy-Item .env.example .env.local
+```zsh
+touch .env.local
 ```
 
 새 프로젝트의 Connect 또는 Settings의 API 관련 화면에서 Project URL과 **publishable key**를 찾고 `.env.local`의 두 빈 값을 채우세요. 키는 `sb_publishable_`로 시작합니다. 이 실습은 기본 호스팅 URL `https://<프로젝트 식별자>.supabase.co`를 사용합니다.
